@@ -1,0 +1,66 @@
+<?php 
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+
+include('header.php');
+?>
+
+
+<div class="row mx-0 py-5 justify-content-center">
+    <div class="wrapper-1 col-lg-10 col-11">
+        <h5>💎 Need to boost your marketing efforts?</h5>
+        <p>You are in the right place and your ad will be shown to the right audience.</p>
+        <img src="assets/images/graph-1.jpg" class="img-fluid border" style="border-radius: 20px;" alt="">
+        <small class="w-100 row py-3"><i class="text-center col-12 px-0">Statistics for 24 hours</i></small>
+        <p class="text-center">Driving traffic is our expertise and we are constantly growing</p>
+        <strong class="text-center d-flex justify-content-center pb-3">Promote your coin to 10k to 25k unique users daily!</strong>
+        <img src="assets/images/graph-1.jpg" class="img-fluid border" style="border-radius: 20px;" alt="">
+        <small class="w-100 row py-3"><i class="text-center col-12 px-0">Statistics for 7 days</i></small>
+        <h4 class="text-center">💎 Promote packages and prices</h4>
+        <div class="row mx-0 pt-4">
+            <div class="col-lg-6 d-flex flex-column align-items-center">
+                <div>
+                    <strong>Promoted coins section</strong>
+                    <ul class="ps-4 pt-2">
+                        <li>1 day promotion - 0.25 BNB</li>
+                        <li>3 days promotion - 0.6 BNB</li>
+                        <li><strong>5 days promotion - 1 BNB</strong></li>
+                        <li>1 week promotion - 1.2 BNB</li>
+                    </ul>
+
+                    <strong class="">Wide header banner (1022x115px)</strong>
+                    <ul class="ps-4 pt-2">
+                        <li>1 day promotion - 0.8 BNB</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex flex-column align-items-center">
+                <div>
+                    <strong>Banner promotion (1000x400px)</strong>
+                    <ul class="ps-4 pt-2">
+                        <li>1 day promotion - 0.5 BNB</li>
+                        <li>3 days promotion - 1.25 BNB</li>
+                        <li><strong>5 days promotion - 2 BNB</strong></li>
+                        <li>1 week promotion - 2.5 BNB</li>
+                    </ul>
+
+                    <strong class="">Pop-up on all pages (any size)</strong>
+                    <ul class="ps-4 pt-2">
+                        <li>1 day promotion - 1.2 BNB</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center mb-1 pt-2" style="font-size: 19px;">For any questions, or to get your coin promoted, feel free to hit us up: </p>
+            <p class="text-center" style="font-size: 19px;"><strong>Contact@gemvotes.com</strong> or on Telegram
+                <strong>t.me/gemvotes</strong>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<?php 
+include('footer.php');
+?>

@@ -1,0 +1,133 @@
+let countcaptcha = 0;
+let captchres;
+let ele;
+var myModal = new bootstrap.Modal(document.getElementById('votemodal'), {
+  keyboard: false
+})
+
+const voteit =(btnelement)=>{
+  countcaptcha++
+
+  if(countcaptcha > 4 ){
+    grecaptcha.reset()
+    countcaptcha = 0
+  }
+
+
+  ele = btnelement
+  if(!btnelement.children[0].classList.contains('active')){
+    myModal.show()
+    captchres = document.getElementsByName("h-captcha-response");
+    
+    gcres = grecaptcha.getResponse() ;
+    if(gcres.length != 0){
+      var objXMLHttpRequest = new XMLHttpRequest();
+    objXMLHttpRequest.onreadystatechange = function() {
+      if(objXMLHttpRequest.readyState === 4) {
+        if(objXMLHttpRequest.status === 200) {
+          if(objXMLHttpRequest.responseText!=''){
+            ele.innerHTML = objXMLHttpRequest.responseText;
+           
+            if(ele.classList.contains('info-vote')){
+              if(ele.children[0].classList.contains('active')){
+                ele.children[0].innerHTML = '🚀 Voted'
+              }
+              else{
+                ele.children[0].innerHTML = '🚀 Vote'
+              }
+            } 
+          }
+          else{
+            window.location.href="login.php"
+          }
+        } else {
+              alert('Error Code: ' +  objXMLHttpRequest.status);
+              alert('Error Message: ' + objXMLHttpRequest.statusText);
+        }
+      }
+    }
+
+    var request = "votes.php?captcharesponse="+captchres+"&id="+ele.id.split('-')[1]
+    objXMLHttpRequest.open('GET',request,true);
+    objXMLHttpRequest.send();
+    }
+
+  }
+  else{
+    var objXMLHttpRequest = new XMLHttpRequest();
+    objXMLHttpRequest.onreadystatechange = function() {
+      if(objXMLHttpRequest.readyState === 4) {
+        if(objXMLHttpRequest.status === 200) {
+          if(objXMLHttpRequest.responseText!=''){
+            ele.innerHTML = objXMLHttpRequest.responseText;
+           
+            if(ele.classList.contains('info-vote')){
+              if(ele.children[0].classList.contains('active')){
+                ele.children[0].innerHTML = '🚀 Voted'
+              }
+              else{
+                ele.children[0].innerHTML = '🚀 Vote'
+              }
+            } 
+          }
+          else{
+            window.location.href="login.php"
+          }
+        } else {
+              alert('Error Code: ' +  objXMLHttpRequest.status);
+              alert('Error Message: ' + objXMLHttpRequest.statusText);
+        }
+      }
+    }
+
+    var request = "votes.php?captcharesponse="+captchres+"&id="+ele.id.split('-')[1]
+    objXMLHttpRequest.open('GET',request,true);
+    objXMLHttpRequest.send();
+  } 
+  
+
+    
+}
+
+
+
+function  checkcaptcha(token){
+  var objXMLHttpRequest = new XMLHttpRequest();
+    objXMLHttpRequest.onreadystatechange = function() {
+      if(objXMLHttpRequest.readyState === 4) {
+        if(objXMLHttpRequest.status === 200) {
+          if(objXMLHttpRequest.responseText!=''){
+            ele.innerHTML = objXMLHttpRequest.responseText;
+           
+            if(ele.classList.contains('info-vote')){
+              if(ele.children[0].classList.contains('active')){
+                ele.children[0].innerHTML = '🚀 Voted'
+              }
+              else{
+                ele.children[0].innerHTML = '🚀 Vote'
+              }
+            } 
+          }
+          else{
+            window.location.href="login.php"
+          }
+        } else {
+              alert('Error Code: ' +  objXMLHttpRequest.status);
+              alert('Error Message: ' + objXMLHttpRequest.statusText);
+        }
+      }
+    }
+
+    var request = "votes.php?captcharesponse="+captchres+"&id="+ele.id.split('-')[1]
+    objXMLHttpRequest.open('GET',request,true);
+    objXMLHttpRequest.send();
+
+  
+    myModal.hide()
+    
+}
+
+
+
+
+// /new
